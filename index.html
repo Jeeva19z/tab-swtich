@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Switch Example</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+.tabs {
+  display: flex;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+}
+
+.tab-button.active {
+  background-color: #ccc;
+}
+
+.tab-pane {
+  display: none;
+  padding: 20px;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <button onclick="changeTab(0)" class="tab-button ">Tab 1</button>
+    <button onclick="changeTab(1)" class="tab-button">Tab 2</button>
+    <button onclick="changeTab(2)" class="tab-button">Tab 3</button>
+  </div>
+
+  <div class="tab-content">
+    <div id="tab1" class="tab-pane active">Content for Tab 1</div>
+    <div id="tab2" class="tab-pane">Content for Tab 2</div>
+    <div id="tab3" class="tab-pane">Content for Tab 3</div>
+  </div>
+
+  <script>
+
+
+
+function changeTab(tabIndex) {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  // Hide all tab panes and deactivate all buttons
+  // tabPanes.forEach(f => f.classList.remove('active'));
+  // tabButtons.forEach(h => h.classList.remove('active'));
+
+  // syntax : 
+  // array.forEach(function(currentValue, index, array) {
+  // });
+
+
+// arrow functoin 
+    // array.forEach((currentValue, index, array) => {
+  // Your code to be executed for each element
+// });
+
+
+  tabPanes.forEach(tabPanes => {
+    tabPanes.classList.remove('active');
+});
+
+  tabButtons.forEach(tabButtons => {
+    tabButtons.classList.remove('active');
+});
+
+
+
+  // Show the selected tab pane and activate the selected button
+  tabPanes[tabIndex].classList.add('active');
+  tabButtons[tabIndex].classList.add('active');
+}
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
